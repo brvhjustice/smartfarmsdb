@@ -10,7 +10,7 @@ class ProductsController extends Controller
         
     public function get_adbanners(Request $request){
   
-        $list = Product::where('type_id', 6)->take(10)->get();
+        $list = Product::where('type_id', 6)->take(10)->orderBy('created_at', 'DESC')->get();
         
                 foreach ($list as $item){
                     $item['description']=strip_tags($item['description']);
@@ -30,7 +30,7 @@ class ProductsController extends Controller
  
     }
         public function get_recommended_products(Request $request){
-        $list = Product::where('type_id', 2)->take(10)->get();
+        $list = Product::where('type_id', 2)->take(10)->orderBy('created_at', 'DESC')->get();
         
                 foreach ($list as $item){
                     $item['description']=strip_tags($item['description']);

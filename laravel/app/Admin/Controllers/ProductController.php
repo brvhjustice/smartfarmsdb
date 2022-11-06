@@ -27,9 +27,10 @@ class ProductController extends AdminController
     {
         $grid = new Grid(new Product());
 
+        $grid->model()->latest();
         $grid->column('id', __('Id'));
         $grid->column('title', __('Title'));
-        $grid->column('ProductType.title', 'Category');
+        $grid->column('ProductType.title', 'Category'); 
         $grid->column('price', __('Price'));
         $grid->column('stars', __('Stars'));
         $grid->column('img', __('Thumbnail Photo'))->image('',60,60);
