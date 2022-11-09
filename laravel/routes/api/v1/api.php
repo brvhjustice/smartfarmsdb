@@ -23,5 +23,9 @@ Route::group(['namespace' => 'Api\V1'], function () {
         Route::get('adbanner', 'ProductsController@get_adbanners');
         Route::get('recommended', 'ProductsController@get_recommended_products');
     });
+    Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function(){
+        Route::post('register', 'CustomerAuthController@register');
+        Route::post('login', 'CustomerAuthController@login');
+    });
 });
 
