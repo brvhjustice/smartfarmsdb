@@ -62,8 +62,11 @@ class CustomerAuthController extends Controller
                 'f_name.required' => 'The first name field is required.',
                 'phone.required' => 'The phone field is required.',
             ]);
+            // if($validator->fails()) {
+            //     return response()->json(['errors' => "Failed Validation"], 403);
+            // }
             if($validator->fails()) {
-                return response()->json(['errors' => "Failed Validation"], 403);
+                return response()->json(['errors' => Helpers::error_processor($validator)], 403);
             }
             $user = User::create([
                 'f_name' => $request->f_name,
