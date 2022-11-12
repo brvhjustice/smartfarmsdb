@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controller\Api\V1\Auth;
+namespace App\Http\Controllers\Api\V1\Auth;
 use App\CentralLogics\Helpers;
 use App\Http\Controllers\Controller;
 
-use App\Model\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
