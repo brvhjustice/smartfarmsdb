@@ -29,6 +29,7 @@ Route::group(['namespace' => 'Api\V1'], function () {
     Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function(){
         Route::post('register', 'CustomerAuthController@register');
         Route::post('login', 'CustomerAuthController@login');
+        Route::get('users', 'CustomerAuthController@login');
     });
 });
 
