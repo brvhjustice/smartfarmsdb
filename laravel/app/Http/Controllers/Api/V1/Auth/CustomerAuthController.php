@@ -21,7 +21,7 @@ class CustomerAuthController extends Controller
         ]);
 
         if ($validator->fails()){
-            return response()->json(['errors'=>Helpers::error_processor($validator)], 403);
+            return response()->json(['errors'=>'Helpers::error_processor($validator)'], 403);
         }
             $data = [
                 'phone' => $request->phone,
